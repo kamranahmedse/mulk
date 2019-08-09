@@ -22,7 +22,8 @@ function mulk(name, format) {
   const nameToLowerCase = (name || '').toLowerCase();
 
   if (format) {
-    return findCountry(dataJson, nameToLowerCase)[`${format}`];
+    const getCountry = findCountry(dataJson, nameToLowerCase) || {};
+    return getCountry ? getCountry[`${format}`] : undefined;
   }
 
   if (nameToLowerCase) {
