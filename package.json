@@ -7,5 +7,22 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/w3debugger/mulk"
-  }
+  },
+  "keywords": [
+    "npm",
+    "package.json",
+    "node.js",
+    "country",
+    "capital",
+    "ios",
+    "alpha-2",
+    "alpha-3",
+    "dialing",
+    "currency",
+    "codes",
+    "independent",
+    "geo name id",
+    "fifa",
+    "ds"
+  ]
 }
