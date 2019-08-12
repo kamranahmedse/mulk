@@ -1,6 +1,6 @@
 {
   "name": "mulk",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Get data of all the countries",
   "main": "app.js",
   "license": "MIT",
