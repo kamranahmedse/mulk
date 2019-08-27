@@ -1,17 +1,14 @@
 {
   "name": "mulk",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Get data of all the countries",
-  "main": "app.js",
+  "main": "index.js",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/w3debugger/mulk"
   },
   "keywords": [
-    "npm",
-    "package.json",
-    "node.js",
     "country",
     "capital",
     "ios",
@@ -19,10 +16,6 @@
     "alpha-3",
     "dialing",
     "currency",
-    "codes",
-    "independent",
-    "geo name id",
-    "fifa",
-    "ds"
+    "codes"
   ]
 }

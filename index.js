@@ -1,36 +1,22 @@
-const dataJson = require('./data.json');
-
-function findCountry(data, name) {
-  const alpha2 = (name || '').length === 2;
-  const alpha3 = (name || '').length === 3;
-
-  return data.find(data => {
-    const dataAlpha2 = (data['ISO3166_1_Alpha_2'] || '').toLowerCase();
-    const dataAlpha3 = (data['ISO3166_1_Alpha_3'] || '').toLowerCase();
-    const countryName = (data['Country_Name'] || '').toLowerCase();
-
-    if ((alpha2 && dataAlpha2 === name)
-      || (alpha3 && dataAlpha3 === name)
-      || (countryName === name)
-    ) {
-      return true;
-    }
-  })
-}
+const mapping = require('./mapping.json');
 
 function mulk(name, format) {
   const nameToLowerCase = (name || '').toLowerCase();
+  let file = {};
 
-  if (format) {
-    const getCountry = findCountry(dataJson, nameToLowerCase) || {};
-    return getCountry ? getCountry[`${format}`] : undefined;
+  mapping.forEach(country => {
+    if ((country.name || []).includes(nameToLowerCase)) {
+      const fileName = country.name[1];
+
+      file = require(`./countries/${fileName}`) || {};
+    }
+  });
+
+  if (name) {
+    return format ? file[format] : file;
+  } else {
+    return require(`./data.json`) || {};
   }
-
-  if (nameToLowerCase) {
-    return findCountry(dataJson, nameToLowerCase);
-  }
-
-  return dataJson;
 }
 
 module.exports = mulk;

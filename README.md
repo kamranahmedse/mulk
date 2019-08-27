@@ -4,7 +4,7 @@ Get data of all the countries
 # Usage
 
 ## Installation
-`npm i mulk`
+`npm i mulk` / `yarn add mulk`
 
 ## In Node.js
 `const mulk = require('mulk');`
